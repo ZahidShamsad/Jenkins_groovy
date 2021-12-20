@@ -5,6 +5,13 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>JenkinsMaven-II</name>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>major_snapshot</id>
+      <url>http://localhost:8081/repository/major_snapshot/</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
@@ -24,16 +31,16 @@
     </plugins>
   </build>
   <dependencies>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-		</dependency>
-		<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.0.1</version>
-    <scope>provided</scope>
-</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
