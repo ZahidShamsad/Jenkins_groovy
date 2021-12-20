@@ -10,25 +10,25 @@ class calcTest {
 
     @Test
     void testsum() {
-        Calc ob = new Calc();
+        calc ob = new calc();
         assertEquals(8, ob.sum(5, 3));
     }
 
     @Test
     void testsub() {
-        Calc ob = new Calc();
+        calc ob = new calc();
         assertEquals(2, ob.sub(5, 3));
     }
 
     @Test
     void testmul() {
-        Calc ob = new Calc();
+        calc ob = new calc();
         assertEquals(15, ob.mul(5, 3));
     }
 
     @Test
     void testdiv() {
-        Calc ob = new Calc();
+        calc ob = new calc();
         assertEquals(3, ob.div(15, 5));
     }
 
