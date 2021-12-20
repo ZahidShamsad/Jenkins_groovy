@@ -28,8 +28,25 @@
           <warSourceDirectory>WebContents</warSourceDirectory>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
   <dependencies>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -47,6 +64,6 @@
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.7.0</version>
       <scope>test</scope>
-  </dependency>
+    </dependency>
   </dependencies>
 </project>
