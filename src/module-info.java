@@ -1,0 +1,3 @@
+module Dell {
+	requires junit;
+}

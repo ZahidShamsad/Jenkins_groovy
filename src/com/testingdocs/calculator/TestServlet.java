@@ -1,3 +1,5 @@
+package com.testingdocs.calculator.tests;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

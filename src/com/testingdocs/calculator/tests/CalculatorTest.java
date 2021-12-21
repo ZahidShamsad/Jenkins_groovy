@@ -1,5 +1,7 @@
-package com.houarizegai.calculator;
+package com.testingdocs.calculator.tests;
 
+//Arrange-Act-Assert pattern
+import com.testingdocs.calculator.Calculator;
 import org.junit.Test; 
 import org.junit.Assert; 
 import org.junit.Before;
