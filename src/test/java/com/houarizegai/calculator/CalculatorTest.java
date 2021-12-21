@@ -1,36 +1,55 @@
 package com.houarizegai.calculator;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test; 
+import org.junit.Assert; 
+import org.junit.Before;
 
-class CalculatorTest {
+public class CalculatorTest {
+private Calculator objCalcUnderTest;
 
-    private Calculator calculator;
+@Before
+public void setUp() {
+//Arrange
+objCalcUnderTest = new Calculator();
+}
 
-    @BeforeEach
-    void setUp() { // Create object before compilation
-        calculator = new Calculator();
-    }
+@Test
+public void testAdd() { 
+int a = 15; int b = 20; 
+int expectedResult = 35;
+//Act 
+long result = objCalcUnderTest.add(a, b);
+//Assert
+Assert.assertEquals(expectedResult, result);
+}
 
-    /*
-     * testCalc() test method
-     */
-    @Test
-    void testCalc() {
-        double first = 3;
-        String second = "5";
+@Test
+public void testSubtract() {
+int a = 25; int b = 20; 
+int expectedResult = 5; 
+long result = objCalcUnderTest.subtract(a, b);
+Assert.assertEquals(expectedResult, result);
+}
 
-        try {
-            Assertions.assertEquals(8, calculator.calc(first, second, '+'));
-            Assertions.assertEquals(-2, calculator.calc(first, second, '-'));
-            Assertions.assertEquals(15, calculator.calc(first, second, '*'));
-            Assertions.assertEquals(0.6, calculator.calc(first, second, '/'));
-            Assertions.assertEquals(3d, calculator.calc(first, second, '%'));
-            Assertions.assertEquals(243, calculator.calc(first, second, '^'));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+@Test
+public void testMultiply() {
+int a = 10; int b = 25;
+long expectedResult = 250;
+long result = objCalcUnderTest.multiply(a, b);
+Assert.assertEquals(expectedResult, result);
+}
 
-    }
+@Test
+public void testDivide() {
+int a = 56; int b = 10; 
+double expectedResult = 5.6; 
+double result = objCalcUnderTest.divide(a, b);
+Assert.assertEquals(expectedResult, result,0.00005); 
+}
+
+@Test(expected = IllegalArgumentException.class)
+public void testDivideByZero() { 
+int a = 15; int b = 0;
+objCalcUnderTest.divide(a, b);
+} 
 }
