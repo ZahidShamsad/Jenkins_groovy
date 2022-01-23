@@ -13,12 +13,6 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<properties>
-		<sonar.host.url>http://localhost:8081</sonar.host.url>
-		<sonar.pdf.username>admin</sonar.pdf.username>
-		<sonar.pdf.password>admin123</sonar.pdf.password>
-	</properties>
-
 	<build>
 		<pluginManagement>
 			<plugins>
