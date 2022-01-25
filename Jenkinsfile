@@ -42,11 +42,11 @@ pipeline {
                 echo "\033[34;1;4mArtifact successfully uploaded to Nexus repository\033[0m"
             }
         }
-//         stage('Building DEPLOY ARTIFACT'){
-//             steps{
-//                 build quietPeriod: 0, job: 'Deploy_Artifact_Groovy'
-//                 echo "\033[34;1;4mDownstream Job Building Artifact executed\033[0m"
-//             }
-//         }
+        stage('Building DEPLOY ARTIFACT'){
+            steps{
+                build quietPeriod: 0, job: 'jenkins_groovy_deploy'
+                echo "\033[34;1;4mDownstream Job Building Artifact executed\033[0m"
+            }
+        }
     }
 }
