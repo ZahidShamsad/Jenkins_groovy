@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Invoke Maven Target'){
             steps{
-                bat 'mvn clean install sonar:sonar'
+                bat 'mvn clean install'
                 echo "\033[34;1;4mSonar Analysis done\033[0m"
             }
         }
