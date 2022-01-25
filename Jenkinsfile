@@ -10,9 +10,9 @@ pipeline {
                 echo ''
             }
         }
-        stage('Checkout code from GitLab'){
+        stage('Checkout code from GitHub'){
             steps{
-                git branch: 'developed', credentialsId: '1ad718b2-a1bd-4ed4-96b6-467f79991119', url: 'https://gitlab.com/ankit.gupta0429/major_project_i.git'
+                git branch: 'developed', credentialsId: 'Github', url: 'https://github.com/ZahidShamsad/Jenkins_groovy.git'
                 echo "\033[34;1;4mCode pulled from GitLab\033[0m"
             }
         }
@@ -42,11 +42,11 @@ pipeline {
                 echo "\033[34;1;4mArtifact successfully uploaded to Nexus repository\033[0m"
             }
         }
-        stage('Building DEPLOY ARTIFACT'){
-            steps{
-                build quietPeriod: 0, job: 'Deploy_Artifact_Groovy'
-                echo "\033[34;1;4mDownstream Job Building Artifact executed\033[0m"
-            }
-        }
+//         stage('Building DEPLOY ARTIFACT'){
+//             steps{
+//                 build quietPeriod: 0, job: 'Deploy_Artifact_Groovy'
+//                 echo "\033[34;1;4mDownstream Job Building Artifact executed\033[0m"
+//             }
+//         }
     }
 }
