@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploying WAR to container'){
             steps{
-                deploy adapters: [tomcat9(credentialsId: 'tiger1', path: '', url: 'http://localhost:9494')], contextPath:'/', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://localhost:9090')], contextPath: '/', onFailure: false, war: '**/*.war'
                 bat 'copy "C:\\Users\\Ankit\\.jenkins\\workspace\\Deploy_Artifact_Groovy\\tiger.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps"'
                 echo "\033[34;1;4mDeploy to Tomcat successful\033[0m"
             }
