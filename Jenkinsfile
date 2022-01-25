@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Upload to Nexus'){
             steps{
-                nexusArtifactUploader artifacts: [[artifactId: 'Java_Jenkins_II', classifier: '', file: 'target/Java_Jenkins_II-1.0-RELEASE.war', type: 'WAR']], credentialsId: 'nexus', groupId: 'Java_Jenkins_II', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'pipeline_groovy_releases', version: '1.0-RELEASE'
+                nexusArtifactUploader artifacts: [[artifactId: 'Java_Jenkins_II', classifier: '', file: 'target/Java_Jenkins_II-1.0-RELEASE.war', type: 'WAR']], credentialsId: 'Nexus', groupId: 'Java_Jenkins_II', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'pipeline_groovy_releases', version: '1.0-RELEASE'
                 echo "\033[34;1;4mArtifact successfully uploaded to Nexus repository\033[0m"
             }
         }
